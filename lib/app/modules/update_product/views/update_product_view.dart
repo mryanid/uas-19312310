@@ -11,7 +11,7 @@ class UpdateProductView extends GetView<UpdateProductController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UpdateProductView'),
+        title: const Text('Update'),
         centerTitle: true,
       ),
       body: FutureBuilder<DocumentSnapshot<Object?>>(
@@ -22,8 +22,6 @@ class UpdateProductView extends GetView<UpdateProductController> {
             controller.cNama.text = data['nama'];
             controller.cNpm.text = data['npm'].toString();
             controller.cAlamat.text = data['alamat'];
-            controller.cJk.text = data['jk'];
-            controller.cProgramstudi.text = data['program_studi'];
             return Padding(
               padding: EdgeInsets.all(8),
               child: Column(children: [
@@ -54,31 +52,11 @@ class UpdateProductView extends GetView<UpdateProductController> {
                 SizedBox(
                   height: 10,
                 ),
-                TextField(
-                  controller: controller.cJk,
-                  autocorrect: false,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(labelText: "Jenis Kelamin"),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  controller: controller.cProgramstudi,
-                  autocorrect: false,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(labelText: "Program_Studi"),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
                 ElevatedButton(
                     onPressed: () => controller.updateProduct(
                           controller.cNama.text,
                           controller.cNpm.text,
                           controller.cAlamat.text,
-                          controller.cJk.text,
-                          controller.cProgramstudi.text,
                           Get.arguments,
                         ),
                     child: Text("Ubah"))

@@ -10,7 +10,7 @@ class AddProductView extends GetView<AddProductController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Data Mahasiswa'),
+        title: const Text('Add Data'),
         centerTitle: true,
       ),
       body: Padding(
@@ -43,31 +43,11 @@ class AddProductView extends GetView<AddProductController> {
           SizedBox(
             height: 10,
           ),
-          TextField(
-            controller: controller.cJk,
-            autocorrect: false,
-            textInputAction: TextInputAction.next,
-            decoration: InputDecoration(labelText: "Jenis Kelamin"),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          TextField(
-            controller: controller.cProgramstudi,
-            autocorrect: false,
-            textInputAction: TextInputAction.next,
-            decoration: InputDecoration(labelText: "Program_Studi"),
-          ),
-          SizedBox(
-            height: 10,
-          ),
           ElevatedButton(
               onPressed: () => controller.addProduct(
                     controller.cNama.text,
                     controller.cNpm.text,
                     controller.cAlamat.text,
-                    controller.cJk.text,
-                    controller.cProgramstudi.text,
                   ),
               child: Text("Simpan"))
         ]),

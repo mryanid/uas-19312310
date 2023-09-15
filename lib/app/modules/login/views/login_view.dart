@@ -12,9 +12,8 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.red,
           title: Text(
-            'Welcome World!',
+            'Login',
           ),
           centerTitle: true,
         ),
@@ -22,11 +21,6 @@ class LoginView extends GetView<LoginController> {
           padding: EdgeInsets.all(10),
           child: ListView(
             children: [
-              Image.asset(
-                'assets/logo.png',
-                height: 150,
-                width: 150,
-              ),
               SizedBox(
                 height: 10,
               ),
@@ -75,17 +69,6 @@ class LoginView extends GetView<LoginController> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
-                onPressed: () => cAuth.LoginGoogle(),
-                child: Text("Login With Google"),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  foregroundColor: Colors.white,
-                ),
-              )
             ],
           ),
         ));
